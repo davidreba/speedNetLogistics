@@ -1,4 +1,4 @@
-@font-face{
+/* @font-face{
     font-family:Slussen;
     src:url(/fonts/Slussen-Compressed-Black.woff2) format("woff2");
     font-display:swap;
@@ -23,6 +23,18 @@
     src:url(/fonts/Slussen-Bold.woff2) format("woff2");
     font-display:swap;
     font-weight:700;
+} */
+@font-face{
+    font-family: 'FoundrySterling-Light';   /* Choose a name for your font */
+    src: url('fonts/FoundrySterling-Light.ttf') format('truetype'); /* Path to your .ttf file */
+    font-weight: normal;           /* Set the weight (normal or bold) */
+    font-style: normal;            /* Set the style (normal, italic) */
+}
+@font-face{
+    font-family: 'FoundrySterling-Bold';   /* Choose a name for your font */
+    src: url('fonts/FoundrySterling-Bold.ttf') format('truetype'); /* Path to your .ttf file */
+    font-weight: normal;           /* Set the weight (normal or bold) */
+    font-style: normal;            /* Set the style (normal, italic) */
 }
 
 /* General page styles */
@@ -82,10 +94,16 @@ h2,h3,h4 {
     text-transform: uppercase;
 }
 
-/* h1, h2, h3, p {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400; /* Adjust weight as needed 
-}*/
+h1 {
+    font-family: 'FoundrySterling-Bold', Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;  /* Remove boldness if desired */
+    line-height: 1.4;  /* Adjust line height if needed */
+    margin-bottom: 1rem;  /* Adjust margin as necessary */
+    font-weight: bold;  /* Make headings bold */
+    text-align: left;   /* Align headings to the left */
+    letter-spacing: -0.5px; 
+}
 
 .container {
     width: 95%;
@@ -161,9 +179,12 @@ section {padding: 0px 0;}
 
 /* Paragraph styles */
 p {
+    font-family: 'FoundrySterling-Light', Arial, sans-serif;
     color: #666;
+    text-align: justify;
     font-size: 18px;
     line-height: 1.6;
+    margin-bottom: 1rem;  /* Add some margin to space paragraphs */
 }
 
 /* Link styles */
