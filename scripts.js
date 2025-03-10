@@ -561,6 +561,10 @@ function reloadPage() {
     location.reload();
 }
 
+function openPage(page) {
+    window.location.href = page;  // This will redirect the user to the provided page
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelectorAll(".navbar a"); // Assuming links are inside the navbar
     const currentPage = window.location.pathname.split("/").pop(); // Get current page name
