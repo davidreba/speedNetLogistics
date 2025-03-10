@@ -177,6 +177,30 @@ section {padding: 0px 0;}
     margin: 10px
 }
 
+.language-switcher {
+    display: flex;
+    position: absolute;  /* Allow positioning within the navbar */
+    justify-content: center;
+    gap: 10px;  /* Adds space between the buttons */
+    align-items: center;
+}
+
+.language-switcher button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.flag-icon {
+    width: 30px;  /* Adjust size of the flag */
+    height: auto;
+}
+
+.language-switcher button:hover .flag-icon {
+    opacity: 0.8;  /* Optional: adds a hover effect */
+}
+
 #start {
     height: 100vh; /* Full viewport height */
     background-image: url('images/log2.png'); /* Replace with actual path */
@@ -214,22 +238,31 @@ section {padding: 0px 0;}
 .start .container p {
     font-size: 1.2em;
     line-height: 1.6;
-    color: white; /* Adjust text color */
+    color: #f6e277; /* Adjust text color */
 }
 
 .contact {
-    height: 100vh; /* Full viewport height */
-    /* background-image: url('images/contact.png'); Replace with actual path */
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white; /* Adjust text color */
+    position: absolute;
+    top: 20%; /* 30% from the top */
+    left: 5%; /* 10% from the left */
+    width: 30%; /* 10% from the right */
+    bottom: 30%; /* 30% from the bottom */
+    background-color: rgba(45, 79, 143, 0.7); /* Semi-transparent blue background */
     padding: 20px;
+    box-sizing: border-box;
+    z-index: 2; /* Ensures text container is above the background */
+}
+
+.contact .container h1 {
+    margin-bottom: 15px;
+    font-size: 2em;
+    color: white; /* Adjust text color */
+}
+
+.contact .container p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: white; /* Adjust text color */
 }
 
 /* Paragraph styles */
