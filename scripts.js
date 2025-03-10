@@ -556,7 +556,8 @@ gsap.to(box_items, {
   }
 });
 
-function reloadPage() {
+function reloadPage() {  
+    window.scrollTo(0, 0); // Scrolls to the top setTimeout(() => {
     location.reload();
 }
 

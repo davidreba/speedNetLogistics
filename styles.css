@@ -177,6 +177,21 @@ section {padding: 0px 0;}
     margin: 10px
 }
 
+.start {
+    height: 100vh; /* Full viewport height */
+    background-image: url('images/log2.png'); /* Replace with actual path */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; /* Adjust text color */
+    padding: 20px;
+}
+
 /* Paragraph styles */
 p {
     font-family: 'FoundrySterling-Light', Arial, sans-serif;
@@ -262,6 +277,8 @@ img {
 }
 
 .navbar {
+    /* font-family: 'FoundrySterling-Light', Arial, sans-serif;
+    position: fixed; */
     top: 0;
     width: 100%;
     background-color: #2d4f8f; /* Blue logo background similar to the reference */
