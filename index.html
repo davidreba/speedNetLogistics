@@ -36,123 +36,151 @@
             <div class="scroll-content"> -->
     <nav id="nav" class="navbar">
         <div class="navbar-left">
-            <a href="javascript:void(0);" onclick="reloadPage();"><img src="images/logo.png" alt="Logo" class="navbar-logo"></a>
+            <a href="javascript:void(0);" onclick="openPage('index.html');"><img src="images/logo.png" alt="Logo" class="navbar-logo"></a>
         </div>
         <div class="navbar-center">
             <ul>
                 <li><a id="why_SNL" href="#why">Why SNL</a></li>
-                <li><a id="about" href="#aboutsnl">About us</a></li>
-                <li><a id="solutions" href="#solutions">Our solutions</a></li>
+                <li><a id="solutions" href="#solution">Our solutions</a></li>
+                <li><a id="about" href="#aboutus">About us</a></li>
                 <li><a id="career" href="#careers">Careers</a></li>
                 <li><a id="contact" href="contact.html">Contact</a></li>
             </ul>
         </div>
-        <div class="navbar-right">            
-            <!-- <span><a href="mailto:speednetlog@gmail.com" class="email-link">speednetlog@gmail.com</a></span>
-            <ul>    
-                <li><a href="#language" class="language"></a></li>
-                <li><a><img id="search-button" src="images/search-icon.png" alt="Search" class="search-icon"></a></li>
-                <li><a href="#profile"><img src="images/profile-icon.png" alt="Profile" class="profile"></a></li>
-            </ul> -->
+        <div class="navbar-right">
             <div class="language-switcher">
-                <button onclick="changeLanguage('en')">
+                <button id="btn-en">
                     <img src="images/english-flag.png" alt="English" class="flag-icon">
                 </button>
-                <button onclick="changeLanguage('sr')">
+                <button id="btn-bs">
                     <img src="images/bosnian-flag.png" alt="Bosnian" class="flag-icon">
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Search pop-up -->
-    <div id="search-popup" class="search-popup">
-        <div class="popup-content">
-          <span class="close-button">&times;</span>
-          <p class="search-message">Start typing and press enter to search</p>
-          <div class="search-container">
-            <input type="text" id="search-input" class="search-bar" placeholder="Search..." />
-          </div>
-        </div>
-    </div>
+    <div class="main-content">
+        <section id="start" class="start">
+            <div class="container">
+                <h1 id="start_h1"><span>Connect your business with the world</span></h1>
+                <p id="start_p1">It doesn't matter if you run a global powerhouse or local startup. We're here to help your business grow.</p>
+            </div>    
+        </section>            
+        
+        <section id="why" class="why">
+            <div class="container">
+                <div class="vertical__content">
+                    <div class="col col_left">
+                        <h1 id="why_SNL_h1" class="vertical__heading"><span>Why SpeedNet Logistics should be your transport and logistics company of choice?</span></h1>
+                        <div class="vertical__item">
+                            <p id="why_SNL_p1">As a global freight forwarder, SpeedNet Logistics provides and manages supply chain solutions for thousands of companies every day. 
+                                Whether you are a small family-run businesses or large global corporation we focus on keeping your supply chains 
+                                flowing through operational excellence and sustainable growth
+                            </p>
+                            <p id="why_SNL_p2">Our skilled people with industry know-how, modern warehouses, strong carrier relationships and a global network across 80
+                            countries position us to better serve your needs. We help you achieve your business objectives through a unique blend of 
+                            optimised and flexible solutions, combined with visibility tools, secure IT infrastructure and sustainability.
+                            </p>
+                        </div>
+                    </div> 
+                </div>  
+                <div class="vertical__content">             
+                    <div class="col col_left">
+                        <h1 id="opti_h1" class="vertical__heading"><span>Optimisation</span></h1>
+                        <div class="vertical__item">
+                            <p id="opti_p1">
+                                SpeedNet Logistics provide optimised transportation and logistics solutions designed by our supply chain experts, 
+                                ensuring the right balance between costs, CO2 compensation, service levels, lead times and risk. 
+                                Our global network and strong partnerships provide you with a carrier mix tailored to your needs. 
+                                We ensure optimisation across all modes of transport through the insights of our local experts.
+                            </p>
+                        </div>
+                    </div>
+                </div>  
+                <div class="vertical__content"> 
+                    <div class="col col_left">
+                        <h1 id="s_v_h1" class="vertical__heading"><span>Security and visibility</span></h1>
+                        <div class="vertical__item">
+                            <p id="s_v_p1">
+                                In order to reduce your supply chain’s carbon footprint, SpeedNet Logistics also provides consolidation, 
+                                shift in transportation modes, load optimisation, container fill rates, and a global transportation network. 
+                                With a team of industry experts, we are ready to design sustainable solutions that help you achieve a greener supply chain. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="vertical__content">             
+                    <div class="col col_left">
+                        <h1 id="flex_h1" class="vertical__heading"><span>Flexibility</span></h1>
+                        <div class="vertical__item">
+                            <p id="flex_p1">
+                                SpeedNet Logistics has become experts at adapting to changing market conditions and providing flexible solutions to meet your business needs. 
+                                Our business model is asset light. This means we can quickly scale activities to match changes in market demand. 
+                                We can also pick the best suppliers for any service depending on factors like reliability, 
+                                available capacity, transit time, sustainability factors and price.
+                            </p>
+                        </div>
+                    </div>
+                </div>  
+                <div class="vertical__content"> 
+                    <div class="col col_left">
+                        <h1 id="sust_h1" class="vertical__heading"><span>Sustainability</span></h1>
+                        <div class="vertical__item">
+                            <p id="sust_p1">
+                                As a leader in transport and logistics, SpeedNet Logicstics has an important role to play in helping the industry transition 
+                                to greener more environmentally friendly practices. We provide sustainable and efficient transport solutions through better planning, 
+                                new technologies and innovative solutions. 
+                                We work with sustainability across all areas of our business, from air, sea and road freight to contract logistics.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </section>
 
-    <section id="start" class="start">
-        <div class="container">
-            <h1 id="start_h1"><span>Connect your business with the world</span></h1>
-            <p id="start_p1">It doesn't matter if you run a global powerhouse or local startup. We're here to help your business grow.</p>
-        </div>    
-    </section>            
-    
-    <section id="why" class="why">
-        <div class="container">
-            <div class="vertical__content">
-                <div class="col col_left">
-                    <h1 id="why_SNL_h1" class="vertical__heading"><span>Why SpeedNet Logistics should be your transport and logistics company of choice?</span></h1>
-                    <div class="vertical__item">
-                        <p id="why_SNL_p1">As a global freight forwarder, SpeedNet Logistics provides and manages supply chain solutions for thousands of companies every day. 
-                            Whether you are a small family-run businesses or large global corporation we focus on keeping your supply chains 
-                            flowing through operational excellence and sustainable growth
-                        </p>
-                        <p id="why_SNL_p2">Our skilled people with industry know-how, modern warehouses, strong carrier relationships and a global network across 80
-                         countries position us to better serve your needs. We help you achieve your business objectives through a unique blend of 
-                         optimised and flexible solutions, combined with visibility tools, secure IT infrastructure and sustainability.
-                        </p>
+        <section id="solution" class="solution">
+            <div class="container">
+                <h1 id="solu_h" class="section-title">Explore your transport options</h1>
+                <div class="solution-grid" style="padding: 20px;">
+                    <div class="solution-item">
+                        <img src="images/air-freight.png" alt="Air Freight">
+                        <h2 id="airfh">Air Freight</h2>
+                        <p id="airfp">When time and speed matter most</p>
                     </div>
-                </div> 
-            </div>  
-            <div class="vertical__content">             
-                <div class="col col_left">
-                    <h1 id="opti_h1" class="vertical__heading"><span>Optimisation</span></h1>
-                    <div class="vertical__item">
-                        <p id="opti_p1">
-                            SpeedNet Logistics provide optimised transportation and logistics solutions designed by our supply chain experts, 
-                            ensuring the right balance between costs, CO2 compensation, service levels, lead times and risk. 
-                            Our global network and strong partnerships provide you with a carrier mix tailored to your needs. 
-                            We ensure optimisation across all modes of transport through the insights of our local experts.
-                        </p>
+                    <div class="solution-item">
+                        <img src="images/sea-freight.png" alt="Sea Freight">
+                        <h2 id="seah">Sea Freight</h2>
+                        <p id="seap">When cost matters and time is not an issue</p>
                     </div>
-                </div>
-            </div>  
-            <div class="vertical__content"> 
-                <div class="col col_left">
-                    <h1 id="s_v_h1" class="vertical__heading"><span>Security and visibility</span></h1>
-                    <div class="vertical__item">
-                        <p id="s_v_p1">
-                            In order to reduce your supply chain’s carbon footprint, SpeedNet Logistics also provides consolidation, 
-                            shift in transportation modes, load optimisation, container fill rates, and a global transportation network. 
-                            With a team of industry experts, we are ready to design sustainable solutions that help you achieve a greener supply chain. 
-                        </p>
+                    <div class="solution-item">
+                        <img src="images/road-transport.png" alt="Road Transport">
+                        <h2 id="roadh">Road Transport</h2>
+                        <p id="roadp">Local, long distance, national or international</p>
+                    </div>
+                    <div class="solution-item">
+                        <img src="images/rail-freight.png" alt="Rail Freight">
+                        <h2 id="railh">Rail Freight</h2>
+                        <p id="railp">The greener alternative</p>
+                    </div>
+                    <div class="solution-item">
+                        <img src="images/special-project.png" alt="Special Project Transport">
+                        <h2 id="spth">Special Project Transport</h2>
+                        <p id="sptp">Out of gauge and anything non-standard</p>
+                    </div>
+                    <div class="solution-item">
+                        <img src="images/courier.png" alt="Courier">
+                        <h2 id="courier_h">Courier</h2>
+                        <p id="courier_p">When it's urgent and you need something delivered fast</p>
                     </div>
                 </div>
             </div>
-            <div class="vertical__content">             
-                <div class="col col_left">
-                    <h1 id="flex_h1" class="vertical__heading"><span>Flexibility</span></h1>
-                    <div class="vertical__item">
-                        <p id="flex_p1">
-                            SpeedNet Logistics has become experts at adapting to changing market conditions and providing flexible solutions to meet your business needs. 
-                            Our business model is asset light. This means we can quickly scale activities to match changes in market demand. 
-                            We can also pick the best suppliers for any service depending on factors like reliability, 
-                            available capacity, transit time, sustainability factors and price.
-                        </p>
-                    </div>
-                </div>
-            </div>  
-            <div class="vertical__content"> 
-                <div class="col col_left">
-                    <h1 id="sust_h1" class="vertical__heading"><span>Sustainability</span></h1>
-                    <div class="vertical__item">
-                        <p id="sust_p1">
-                            As a leader in transport and logistics, SpeedNet Logicstics has an important role to play in helping the industry transition 
-                            to greener more environmentally friendly practices. We provide sustainable and efficient transport solutions through better planning, 
-                            new technologies and innovative solutions. 
-                            We work with sustainability across all areas of our business, from air, sea and road freight to contract logistics.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>  
-    </section>
+        </section>        
+
+        <section id="aboutus" class="aboutus">
+
+
+        </section>
+    </div>
 
     <footer>
         <div class="footer-container">
@@ -174,6 +202,6 @@
         });
     </script> 
     <script src="./scripts.js"></script>
-    <script src="languages.js"></script>
+    <script src="./languages.js"></script>
 </body> 
 </html>

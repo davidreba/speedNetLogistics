@@ -48,6 +48,7 @@ body {
     font-weight: 400;
     background: #fff;
     color: #000;
+    padding-top: 100px; /* Adjust based on the height of your navbar */
 }
 
 [data-scroll-section] {
@@ -58,28 +59,31 @@ body {
 
 html, body {
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    margin: 0;
     overflow: scroll;
+    flex-direction: column;
     overflow-y: auto; /* Ensure vertical scrolling */
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-y: scroll; /* Ensures scrollbar is always present */
+}
+
+.main-content {
+    flex: 1; /* Pushes the footer to the bottom */
 }
 
 h2 {
+    font-family: 'FoundrySterling-Bold', Arial, sans-serif;
     font-size: 60px;
     font-weight: 900;
     line-height: 85%;
-    border-left: 3px solid #699eda;
-    border-right: 3px solid #699eda;
     padding: 5px;
     margin: 10px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
 }
 
 h2 span { 
@@ -201,6 +205,10 @@ section {padding: 0px 0;}
     opacity: 0.8;  /* Optional: adds a hover effect */
 }
 
+#why {
+    padding-top: 90px;  /* Adjust this value based on your navbar height */
+}
+
 #start {
     height: 100vh; /* Full viewport height */
     background-image: url('images/log2.png'); /* Replace with actual path */
@@ -215,6 +223,7 @@ section {padding: 0px 0;}
     color: white; /* Adjust text color */
     padding: 20px;
     position: relative;
+    padding-top: 160px;  /* Adjust this value based on your navbar height */
 }
 
 .start .container {
@@ -222,7 +231,7 @@ section {padding: 0px 0;}
     top: 20%; /* 30% from the top */
     left: 5%; /* 10% from the left */
     width: 30%; /* 10% from the right */
-    bottom: 30%; /* 30% from the bottom */
+    bottom: 42%; /* 30% from the bottom */
     background-color: rgba(45, 79, 143, 0.7); /* Semi-transparent blue background */
     padding: 20px;
     box-sizing: border-box;
@@ -239,6 +248,76 @@ section {padding: 0px 0;}
     font-size: 1.2em;
     line-height: 1.6;
     color: #f6e277; /* Adjust text color */
+}
+
+.solution {
+    padding: 90px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+    gap: 20px;
+    justify-content: center;
+}
+
+.solution-item {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 0; /* No rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures image doesn't exceed boundaries */
+}
+
+.solution-item:hover {
+    transform: translateY(-5px);
+}
+
+.solution-item img {
+    width: 100%; /* Stretch image to full width */
+    height: 55%; /* Image takes 40% of the box height */
+    display: block;
+    object-fit: cover; /* Ensures image covers the full width */
+}
+
+.solution-item h2 {
+    font-size: 24px;
+    margin-top: 35px;
+    color: #0056b3; 
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.solution-item p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+    text-align: center; white-space: nowrap; /* Prevents text from wrapping */
+}
+
+@media (max-width: 900px) {
+    .solutions-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .solutions-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+    }
 }
 
 .contact {
@@ -350,9 +429,11 @@ img {
 }
 
 .navbar {
-    /* font-family: 'FoundrySterling-Light', Arial, sans-serif;
-    position: fixed; */
+    /* font-family: 'FoundrySterling-Light', Arial, sans-serif; */
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     background-color: #2d4f8f; /* Blue logo background similar to the reference */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -1011,6 +1092,7 @@ body.fav-cart-open::before {
 /* Footer styling */
 footer {
     min-height: 40px;
+    width: 100%;
     font-family: 'Arial Nova Light', sans-serif;
 	font-weight: 400;
     background-color: #272727; /* Same as topbar background */
@@ -1018,7 +1100,6 @@ footer {
     margin-top: auto;
     /*padding: 20px 0;
     text-align: center;
-    width: 100%;
     position: relative;
     bottom: 0; */
 }
