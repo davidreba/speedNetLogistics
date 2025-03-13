@@ -681,6 +681,52 @@ img {
     transform: rotate(90deg); /* Rotate 90 degrees on hover */
 }
 
+.main-content-careers {
+    height: 100vh; /* Full viewport height */
+     /*background-image: url('images/aboutus.png'); Replace with actual path 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 160px; /* Adjust based on navbar height */
+}
+
+.careers {
+    display: flex;
+    width: 90%; /* Keeps layout responsive */
+    max-width: 1200px;
+    justify-content: center; /* Center the content */
+}
+
+.careers .content-box {
+    position: absolute;
+    top: 10%; /* 10% from the top */
+    left: 5%; /* 5% from the left */
+    width: 30%; /* 30% width */
+    bottom: 30%; /* Adjust bottom spacing */
+    background-color: rgba(45, 79, 143, 0.7); /* Semi-transparent blue background */
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2; /* Ensures text box is above the background */
+    color: white;
+    text-align: center;
+}
+
+.careers .content-box h1 {
+    margin-bottom: 15px;
+    font-size: 2em;
+    color: white;
+}
+
+.careers .content-box p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #f6e277; /* Matching the index.html style */
+}
+
 .main-content-about {
     height: 100vh; /* Full viewport height */
      /*background-image: url('images/aboutus.png'); Replace with actual path 
