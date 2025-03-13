@@ -23,6 +23,9 @@ function changeLanguage(language) {
     // Define translations
     const translations = {
         en: {
+            zagl_abus: "SNL About us",
+            zagl_con: "SNL Contact",
+            zagl_car: "SNL Career",
             why_SNL: "Why SNL", 
             about: "About us",  
             solutions: "Our solutions",
@@ -64,6 +67,9 @@ function changeLanguage(language) {
             about_p: "Speednet Logistics d.o.o. is a logistics company based in Bijeljina, specializing in road freight transport. We provide reliable and efficient transportation services across Bosnia and Herzegovina and the region, ensuring the safe and timely delivery of various types of cargo. In addition to road transport, we offer different transport solutions tailored to our clients' needs, including combined and specialized transport. Our team of experienced professionals and a modern transport fleet guarantee high-quality service and customer satisfaction. Contact us for a safe and fast solution to your logistics needs!"
         },
         bs: {
+            zagl_abus: "SNL O nama",
+            zagl_con: "SNL Kontakt",
+            zagl_car: "SNL Karijera",
             why_SNL: "Zašto SNL",  
             about: "O nama",  
             solutions: "Naša rešenja",
