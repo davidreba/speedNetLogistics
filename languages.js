@@ -53,7 +53,9 @@ function changeLanguage(language) {
             spth: "Special project transport",
             sptp: "Out of gauge and anything non-standard",
             courier_h: "Courier",
-            courier_p: "When it's urgent and you need something delivered fast"
+            courier_p: "When it's urgent and you need something delivered fast",
+            about_h: "About us",
+            about_p: "Speednet Logistics d.o.o. is a logistics company based in Bijeljina, specializing in road freight transport. We provide reliable and efficient transportation services across Bosnia and Herzegovina and the region, ensuring the safe and timely delivery of various types of cargo. In addition to road transport, we offer different transport solutions tailored to our clients' needs, including combined and specialized transport. Our team of experienced professionals and a modern transport fleet guarantee high-quality service and customer satisfaction. Contact us for a safe and fast solution to your logistics needs!"
         },
         bs: {
             why_SNL: "Zašto SNL",  
@@ -86,7 +88,9 @@ function changeLanguage(language) {
             spth: "Spec. transportni projekti",
             sptp: "Vangabaritni i nestandardni tereti",
             courier_h: "Kurirska dostava",
-            courier_p: "Kada je hitno i treba brzo dostaviti"
+            courier_p: "Kada je hitno i treba brzo dostaviti",
+            about_h: "O nama",
+            about_p: "Speednet Logistics d.o.o. je logistička kompanija sa sjedištem u Bijeljini, specijalizovana za cestovni prijevoz robe. Pružamo pouzdane i efikasne transportne usluge širom Bosne i Hercegovine i regije, osiguravajući siguran i pravovremen transport različitih vrsta tereta. Pored cestovnog prevoza, nudimo i različite vrste transportnih rješenja prilagođenih potrebama naših klijenata, uključujući kombinovani i specijalizovani transport. Naš tim iskusnih profesionalaca i moderna transportna flota garantuju visok kvalitet usluge i zadovoljstvo naših klijenata. Kontaktirajte nas za sigurno i brzo rješenje vaših logističkih potreba!"
         }
     };
     

@@ -66,6 +66,8 @@ html, body {
     flex-direction: column;
     overflow-y: auto; /* Ensure vertical scrolling */
     overflow-x: hidden; /* Prevent horizontal scroll */
+    transition: background-color 0.5s ease, opacity 0.5s ease;
+    opacity: 1;
 }
 
 html {
@@ -228,10 +230,10 @@ section {padding: 0px 0;}
 
 .start .container {
     position: absolute;
-    top: 20%; /* 30% from the top */
-    left: 5%; /* 10% from the left */
-    width: 30%; /* 10% from the right */
-    bottom: 42%; /* 30% from the bottom */
+    top: 10%; /* 10% from the top */
+    left: 5%; /* 5% from the left */
+    width: 30%; /* 30% from the right */
+    bottom: 60%; /* 50% from the bottom */
     background-color: rgba(45, 79, 143, 0.7); /* Semi-transparent blue background */
     padding: 20px;
     box-sizing: border-box;
@@ -320,28 +322,78 @@ section {padding: 0px 0;}
     }
 }
 
+/* Contact Page Styles */
+.main-content-contact {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 160px; /* Adjust based on navbar height */
+}
+
 .contact {
+    display: flex;
+    width: 90%; /* Keeps layout responsive */
+    max-width: 1200px;
+    justify-content: center; /* Center the content */
+}
+
+.contact .content-box {
     position: absolute;
-    top: 20%; /* 30% from the top */
-    left: 5%; /* 10% from the left */
-    width: 30%; /* 10% from the right */
-    bottom: 30%; /* 30% from the bottom */
+    top: 10%; /* 10% from the top */
+    left: 5%; /* 5% from the left */
+    width: 30%; /* 30% width */
+    bottom: 30%; /* Adjust bottom spacing */
     background-color: rgba(45, 79, 143, 0.7); /* Semi-transparent blue background */
     padding: 20px;
     box-sizing: border-box;
-    z-index: 2; /* Ensures text container is above the background */
+    z-index: 2; /* Ensures text box is above the background */
+    color: white;
+    text-align: center;
 }
 
-.contact .container h1 {
+.contact .content-box h1 {
     margin-bottom: 15px;
     font-size: 2em;
-    color: white; /* Adjust text color */
+    color: white;
 }
 
-.contact .container p {
+.contact .content-box p {
     font-size: 1.2em;
     line-height: 1.6;
-    color: white; /* Adjust text color */
+    color: #f6e277; /* Matching the index.html style */
+}
+
+/* Image Box for Contact Page */
+.image-box {
+    position: absolute; /* Position the image box */
+    top: 10%;
+    right: 5%; /* 5% from the right */
+    width: 50%; /* Match the width with content box */
+}
+
+.image-box img {
+    width: 100%; /* Ensure the image covers the full width of its container */
+    height: 100%; /* Make the image fill the container */
+    object-fit: cover; /* Ensures the image covers the area without distorting its aspect ratio */
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column; /* Stack the navigation links on smaller screens */
+    }
+
+    .contact .content-box {
+        width: 80%; /* Expand width for better readability on smaller screens */
+        left: 10%;
+        top: 15%;
+        bottom: auto;
+    }
+
+    .image-box {
+        display: none; /* Hide image on smaller screens for better layout */
+    }
 }
 
 /* Paragraph styles */
@@ -627,6 +679,71 @@ img {
 .close-fav-cart-preview:hover {
     color: #862626; /* Change color on hover */
     transform: rotate(90deg); /* Rotate 90 degrees on hover */
+}
+
+.main-content-about {
+    height: 100vh; /* Full viewport height */
+     /*background-image: url('images/aboutus.png'); Replace with actual path 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 160px; /* Adjust based on navbar height */
+}
+
+.aboutus {
+    display: flex;
+    width: 90%; /* Keeps layout responsive */
+    max-width: 1200px;
+    justify-content: center; /* Center the content */
+    /*background-image: url('images/log1.png');  Replace with actual path 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; */
+}
+
+.aboutus .content-box {
+    position: absolute;
+    top: 10%; /* 10% from the top */
+    left: 5%; /* 5% from the left */
+    width: 30%; /* 30% from the right */
+    bottom: 30%; /* 30% from the bottom */
+    background-color: rgba(45, 79, 143, 0.7); /* Semi-transparent blue background */
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2; /* Ensures text box is above the background */
+    color: white;
+    text-align: center;
+}
+
+.aboutus .content-box h1 {
+    margin-bottom: 15px;
+    font-size: 2em;
+    color: white;
+}
+
+.aboutus .content-box p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #f6e277; /* Matching the index.html style */
+}
+
+/* Image Box for Truck */
+.image-box {
+    position: absolute; /* Position the image box */
+    top: 10%;
+    right: 5%; /* 5% from the right */
+    width: 50%; /* Match the width with content box */
+    bottom: 30%;
+}
+
+.image-box img {
+    width: 100%; /* Ensure the image covers the full width of its container */
+    height: 100%; /* Make the image fill the container */
+    object-fit: cover; /* Ensures the image covers the area without distorting its aspect ratio */
 }
 
 @media (max-width: 768px) {
