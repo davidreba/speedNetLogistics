@@ -54,6 +54,12 @@ function changeLanguage(language) {
             sptp: "Out of gauge and anything non-standard",
             courier_h: "Courier",
             courier_p: "When it's urgent and you need something delivered fast",
+            contact_h: "Contact",
+            contact_p: "If you have any questions or inquiries, feel free to reach out to us. We're here to help!",
+            contact_tel: "Phone: (+387) 66 794 308",
+            cariera_h: "Career",
+            cariera_p1: "Looking for a new employment opportunity? Join our team!",
+            cariera_p2: "For available positions, contact us at:",
             about_h: "About us",
             about_p: "Speednet Logistics d.o.o. is a logistics company based in Bijeljina, specializing in road freight transport. We provide reliable and efficient transportation services across Bosnia and Herzegovina and the region, ensuring the safe and timely delivery of various types of cargo. In addition to road transport, we offer different transport solutions tailored to our clients' needs, including combined and specialized transport. Our team of experienced professionals and a modern transport fleet guarantee high-quality service and customer satisfaction. Contact us for a safe and fast solution to your logistics needs!"
         },
@@ -89,6 +95,12 @@ function changeLanguage(language) {
             sptp: "Vangabaritni i nestandardni tereti",
             courier_h: "Kurirska dostava",
             courier_p: "Kada je hitno i treba brzo dostaviti",
+            contact_h: "Kontakt",
+            contact_p: "Ako imate bilo kakva pitanja ili upite, slobodno nas kontaktirajte. Tu smo da vam pomognemo!",
+            contact_tel: "Telefon: (+387) 66 794 308",
+            cariera_h: "Zaposlenje",
+            cariera_p1: "Tražite novu priliku za zaposlenje? Pridružite se našem timu!",
+            cariera_p2: "Za dostupne pozicije kontaktirajte nas na:",
             about_h: "O nama",
             about_p: "Speednet Logistics d.o.o. je logistička kompanija sa sjedištem u Bijeljini, specijalizovana za cestovni prijevoz robe. Pružamo pouzdane i efikasne transportne usluge širom Bosne i Hercegovine i regije, osiguravajući siguran i pravovremen transport različitih vrsta tereta. Pored cestovnog prevoza, nudimo i različite vrste transportnih rješenja prilagođenih potrebama naših klijenata, uključujući kombinovani i specijalizovani transport. Naš tim iskusnih profesionalaca i moderna transportna flota garantuju visok kvalitet usluge i zadovoljstvo naših klijenata. Kontaktirajte nas za sigurno i brzo rješenje vaših logističkih potreba!"
         }
