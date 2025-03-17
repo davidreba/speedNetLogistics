@@ -59,16 +59,20 @@ closeLinks.forEach(link => {
 });
 
 // Smooth scrolling with Lenis
-const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
-});
+if (typeof Lenis !== "undefined") {
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    });
 
-function raf(time) {
-    lenis.raf(time);
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
+} else {
+    console.error("Lenis is not defined. Please check your script loading order.");
 }
-requestAnimationFrame(raf);
 
 // Open a page when clicking a button
 function openPage(page) {
@@ -80,15 +84,6 @@ function toggleMenu() {
     const menu = document.querySelector('.nav-links');
     menu.classList.toggle('active');
 }
-
-document.addEventListener('click', function(event) {
-    const menu = document.querySelector('.nav-links');
-    const toggle = document.querySelector('.menu-toggle');
-
-    if (!menu.contains(event.target) && event.target !== document.querySelector('.menu-toggle')) {
-        menu.classList.remove('active');
-    }
-});
 
 function toggleMobileMenu() {
     var menu = document.querySelector('.mobile-menu');
