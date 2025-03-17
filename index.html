@@ -15,6 +15,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Roboto&display=swap" rel="stylesheet">
 	
     <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+	
+	<script>
+        // Create a function that handles the dynamic routing based on the path
+        function loadPage(page) {
+            const pages = {
+                "/": 'https://speednetlogistics.com/index.html',
+				"/home": "https://speednetlogistics.com/index.html",
+				"/why-snl": 'https://speednetlogistics.com/index.html#why',
+				"/our-solutions": 'https://speednetlogistics.com/index.html#solution',
+				"/about-us": "https://speednetlogistics.com/about.html",
+				"/contact": "https://speednetlogistics.com/contact.html",
+				"/career": "https://speednetlogistics.com/career.html"
+            };
+
+            // Check if the page exists, otherwise load 404 page
+            const pageToLoad = pages[page] || '404.html';
+
+            // Load the page content into the body
+            fetch(pageToLoad)
+                .then(response => response.text())
+                .then(data => {
+                    document.body.innerHTML = data;
+                })
+                .catch(err => {
+                    document.body.innerHTML = "<h1>404 Page Not Found</h1>";
+                });
+        }
+
+        // Load the page based on the current path
+        window.onload = () => {
+            const path = window.location.pathname;
+            loadPage(path);
+        }
+    </script>
 </head>
 <body>
     <div id="loader"></div>
