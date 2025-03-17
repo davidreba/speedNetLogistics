@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <script>
+        // Redirect based on the URL path
+        const redirectMap = {
+            "/home": "index.html",
+            "/about-us": "about.html",
+            "/contact": "contact.html",
+            "/career": "career.html"
+        };
+
+        const path = window.location.pathname;
+
+        // If path matches one in the map, redirect to the corresponding HTML file
+        if (redirectMap[path]) {
+            window.location.replace(redirectMap[path]);
+        }
+    </script>
+</head>
+<body>
+    <p>If you are seeing this page, the URL is not correct. Redirecting...</p>
+</body>
+</html>
