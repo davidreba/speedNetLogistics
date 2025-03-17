@@ -228,6 +228,13 @@
         loader.classList.add("hidden");
         });
     </script>
+	
+	<script>
+		// Change URL to /home without reloading the page
+		if (window.location.pathname === '/index.html') {
+			window.history.pushState({}, '', '/home');
+		}
+	</script>
     <script src="./languages.js"></script>
     <script src="./scripts.js"></script>
 </body> 
