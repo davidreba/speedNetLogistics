@@ -49,6 +49,8 @@ body {
     background: #fff;
     color: #000;
     padding-top: 100px; /* Adjust based on the height of your navbar */
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 [data-scroll-section] {
@@ -119,7 +121,7 @@ h1 {
 section {padding: 0px 0;}
 
 .col {
-    width: 60%;
+    width: 90%;
 }
 
 #vertical {
@@ -199,6 +201,7 @@ img {
 
 .navbar {
     /* font-family: 'FoundrySterling-Light', Arial, sans-serif; */
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -297,6 +300,72 @@ img {
     opacity: 0.5; /* Make the image slightly transparent */
 }
 
+/* Default: Hide mobile navbar */
+.navbar-mobile {
+    display: none;
+}
+
+/* Style for the links in the mobile menu */
+.navbar-mobile .mobile-menu a {
+    color: #f6e277; /* Set the link color to yellow */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Optional: Hover effect for links (change color on hover) */
+.navbar-mobile .mobile-menu a:hover {
+    color: #ffcc00; /* Slightly darker yellow on hover */
+}
+
+/* Mobile Menu - Hidden by Default */
+.mobile-menu {
+    position: fixed;
+    top: 110px; /* Adjust position from the top */
+    left: 0;
+    width: 100%;
+    background-color: #2d4f8f;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially invisible */
+    max-height: 0; /* Initially collapsed */
+    padding-top: 0; /* Fix padding top issue */
+    transition: visibility 0s 0.3s, opacity 0.3s ease, max-height 0.3s ease;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+}
+
+/* When the menu is active */
+.mobile-menu.active {
+    visibility: visible;
+    opacity: 1; /* Make it visible */
+    max-height: 350px; /* Adjust based on content height */
+    transition: visibility 0s, opacity 0.3s ease, max-height 0.3s ease; /* Smooth transition */
+}
+
+/* Mobile Menu Links Styling */
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.mobile-menu ul li {
+    width: 100%;
+}
+
+.mobile-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+.mobile-menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 .main-content-about {
     height: 100vh; /* Full viewport height */
      /*background-image: url('images/aboutus.png'); Replace with actual path 
@@ -380,9 +449,10 @@ img {
 }
 
 .solution {
-    padding: 90px;
+    padding: 2%;
     background-color: #f8f8f8;
     text-align: center;
+	padding-top: 90px;
 }
 
 .section-title {
@@ -392,11 +462,13 @@ img {
     text-align: center;
 }
 
+/* Solution Section */
 .solution-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
     gap: 20px;
     justify-content: center;
+    width: 100%; /* Ensure full width */
 }
 
 .solution-item {
@@ -410,6 +482,7 @@ img {
     border-radius: 0; /* No rounded corners */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden; /* Ensures image doesn't exceed boundaries */
+    transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
 .solution-item:hover {
@@ -418,7 +491,7 @@ img {
 
 .solution-item img {
     width: 100%; /* Stretch image to full width */
-    height: 55%; /* Image takes 40% of the box height */
+    height: 55%; /* Image takes 55% of the box height */
     display: block;
     object-fit: cover; /* Ensures image covers the full width */
 }
@@ -434,7 +507,8 @@ img {
     font-size: 1.2rem;
     color: #666;
     margin-top: 10px;
-    text-align: center; white-space: nowrap; /* Prevents text from wrapping */
+    text-align: center; 
+    white-space: nowrap; /* Prevents text from wrapping */
 }
 
 .aboutus {
@@ -600,35 +674,6 @@ img {
     object-fit: cover; /* Ensures the image covers the area without distorting its aspect ratio */
 }
 
-@media (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column; /* Stack the navigation links on smaller screens */
-    }
-
-    .contact .content-box {
-        width: 80%; /* Expand width for better readability on smaller screens */
-        left: 10%;
-        top: 15%;
-        bottom: auto;
-    }
-
-    .image-box {
-        display: none; /* Hide image on smaller screens for better layout */
-    }
-}
-
-@media (max-width: 900px) {
-    .solutions-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
-    }
-}
-
-@media (max-width: 600px) {
-    .solutions-grid {
-        grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
-    }
-}
-
 /* For WebKit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
     width: 8px; /* Width of the scrollbar */
@@ -686,6 +731,7 @@ footer {
 	font-weight: 400;
     background-color: #272727; /* Same as topbar background */
     color: white;
+    background-color: #2d4f8f;
     padding: 10px 0; /* Adds spacing inside the footer */
     /*padding: 20px 0;
     text-align: center;
@@ -694,28 +740,28 @@ footer {
 }
 
 .footer-container {
+    background-color: #2d4f8f;
+    color: white;
+    padding: 10px;
+	margin-top: -10px;
+}
+
+/* Default: Show desktop version, hide mobile version */
+.footer-desktop {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Adjust padding based on your layout */
+    text-align: center;
 }
 
-footer .footer-left {
-    margin-left: 85px;
-    margin-bottom: 20px;
-    color: white;
+.footer-desktop .footer-left {
+	margin-left: 8px;
 }
 
-footer .footer-center {
-    margin-bottom: 20px;
-    color: white;
+.footer-desktop .footer-right {
+	margin-right: 40px;
 }
 
-footer .footer-right {
-    margin-right: 85px;
-    margin-bottom: 20px;
-    color: white;
-}
 
 footer .footer-left a {
     transition: transform 0.3s ease; /* Smooth transition for hover effect */
@@ -727,9 +773,8 @@ footer .footer-left a:hover {
     opacity: 0.9; /* Make the image slightly transparent */
 }
 
-footer img {
-    width: 30px;
-    height: 30px;
+.footer-mobile {
+    display: none;
 }
 
 footer a {
@@ -750,4 +795,238 @@ footer .email-link:hover {
 /* Hide elements by default */
 .hidden {
     display: none;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .start .container {
+        position: static; /* Remove absolute positioning */
+        width: 90%; /* Make it wider on small screens */
+        max-width: 90%; /* Ensure it doesn’t exceed screen width */
+        margin: 0 auto; /* Center the container */
+        padding: 15px; /* Adjust padding for better spacing */
+        text-align: center; /* Ensure text remains centered */
+        margin-top: -320px; /* Move it up slightly */
+    }
+
+    .start .container h1 {
+        font-size: 2em;
+    }
+
+    .start .container p {
+        font-size: 1.5em;
+    }
+
+    #start {
+        padding-top: 120px; /* Adjust padding if needed */
+        height: auto; /* Allow height to adjust dynamically */
+        min-height: 100vh; /* Ensure it covers full viewport height */
+    }
+	
+	.main-content-about,
+	.main-content-contact,
+	.main-content-careers {
+        height: auto; /* Allow height to adjust dynamically */
+        min-height: 100vh; /* Ensure it covers full viewport height */
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center everything */
+        justify-content: flex-start; /* Align content to the top */
+        padding-bottom: 30px; /* Extra space at the bottom */
+    }
+
+    .aboutus,
+	.contact,
+	.careers {
+        flex-direction: column; /* Stack elements vertically */
+        width: 90%;
+        text-align: center;
+    }
+
+    .aboutus .content-box,
+	.careers .content-box,
+	.contact .content-box {
+        position: static; /* Remove absolute positioning */
+        width: 90%; /* Full width with some padding */
+        max-width: 90%;
+        margin: 0 auto; /* Center horizontally */
+        padding: 15px; /* Adjust padding for better spacing */
+        margin-top: -80px; /* Adjust to match index.html */
+    }
+
+    .aboutus .content-box h1,
+	.careers .content-box h1,
+	.contact .content-box h1 {
+        font-size: 1.8em; /* Adjust heading size */
+    }
+
+    .aboutus .content-box p,
+	.careers .content-box p,
+	.contact .content-box p{
+        font-size: 1.2em; /* Adjust paragraph size */
+    }
+	
+	#cariera_mail {
+		white-space: nowrap; /* Prevents the text from wrapping onto the next line */
+	}
+
+    .navbar ul {
+        flex-direction: column; /* Stack the navigation links on smaller screens */
+    }
+
+    .contact .content-box {
+        width: 80%; /* Expand width for better readability on smaller screens */
+        left: 10%;
+        top: 15%;
+        bottom: auto;
+    }
+
+    .image-box {
+        display: none; /* Hide image on smaller screens for better layout */
+    }
+
+    .navbar {
+        display: none; /* Hide desktop navbar */
+    }
+
+    .navbar-mobile {
+        display: flex; /* Show mobile navbar */
+        justify-content: space-between; /* Logo on the left, button on the right */
+        align-items: center;
+        background-color: #2d4f8f; /* Blue logo background */
+        padding: 10px 20px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-logo {
+        height: 60px; /* Adjust logo size */
+    }
+
+    .language-switcher_mob {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px; /* Adds some space above */
+        width: 100%; /* Ensures full width for centering */
+        text-align: center; /* Centers the content inside the container */
+    }
+
+    .language-switcher_mob button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .language-switcher_mob button img {
+        width: 36px; /* Set a fixed width */
+        height: 24px; /* Set a fixed height */
+        object-fit: cover; /* Ensures the images scale properly */
+    }
+
+    .flag-icon {
+        width: 30px;  /* Adjust size of the flag */
+        height: auto;
+    }
+	
+	.solution {
+		padding-right: 11%;
+	}
+	 
+	.solution-grid {
+        grid-template-columns: 1fr; /* One column per row (stack items) */
+        padding: 20px; /* Optional: Add padding for mobile */
+    }
+
+    .solution-item {
+        width: 90%; /* Make items 90% of screen width (5% padding on each side) */
+        margin: 0 auto 20px auto; /* Center items with margin on bottom */
+        padding: 20px; /* Add padding for mobile */
+    }
+
+    .solution-item img {
+        height: auto; /* Adjust image height for mobile */
+        max-width: 100%; /* Limit image width for mobile */
+    }
+
+    .solution-item h2 {
+        font-size: 1.4rem; /* Adjust heading size for mobile */
+    }
+
+    .solution-item p {
+        font-size: 1rem; /* Adjust paragraph size for mobile */
+    }
+
+    .mobile-menu-button {
+        display: block;
+        font-size: 36px;
+        padding: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #f6e277; /* Ensure button is visible */
+        margin-right: 30px; /* Reduce right margin to move it left */
+        margin-left: 0px; /* Push it slightly to the left */
+    }
+
+    .footer-desktop {
+        display: none; /* Hide desktop version */
+    }
+
+    .footer-mobile {
+        display: flex;
+        flex-direction: column; /* Stack rows */
+        align-items: center;
+        text-align: center;
+        width: 100%;
+		margin-top: -15px;
+		margin-bottom: -10px;
+    }
+	
+	.footer-center-mobile {		
+		margin-bottom: 20px;
+	}
+	
+	.footer-bottom {
+		display: flex;
+        flex-direction: row; /* Stack columns */
+		justify-content: space-between; /* Pushes number left & email right */
+		align-items: center;
+		width: 100%;
+		padding: 0 20px; /* Adds spacing on both sides */
+	}
+
+	.footer-left-mobile {
+		flex: 1;
+		text-align: left; /* Aligns text to the left */
+	}
+
+	.footer-right-mobile {
+		flex: 1;
+		text-align: right; /* Aligns text to the right */
+	}
+}
+
+@media (max-width: 900px) {
+    .solutions-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .solutions-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+    }
 }

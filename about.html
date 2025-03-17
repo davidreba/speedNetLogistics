@@ -17,6 +17,36 @@
 <body>
     <div id="loader"></div>
 
+    <!-- Mobile menu button (hidden by default on large screens) -->
+    <nav class="navbar-mobile">
+        <div class="navbar-left">
+            <a href="javascript:void(0);" onclick="openPage('index.html');"><img src="images/logo.png" alt="Logo" class="navbar-logo"></a>
+        </div>
+        <button class="mobile-menu-button">☰</button>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <ul>
+                <li><a id="why_SNL_mob" href="index.html#why">Why SNL</a></li>
+                <li><a id="solutions_mob" href="index.html#solution">Our solutions</a></li>
+                <li><a id="about_mob" href="about.html">About us</a></li>
+                <li><a id="career_mob" href="career.html">Career</a></li>
+                <li><a id="contact_mob" href="contact.html">Contact</a></li>
+            </ul>
+    
+            <!-- Language Switcher -->
+            <div class="language-switcher_mob">
+                <button id="btn-en" data-lang="en">
+                    <img src="images/english-flag.png" class="flag-icon" alt="English">
+                </button>
+                <button id="btn-bs" data-lang="bs">
+                    <img src="images/bosnian-flag.png" class="flag-icon" alt="Bosnian">
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Desktop Navbar (hidden on small screens) -->
     <nav id="nav" class="navbar">
         <div class="navbar-left">
             <a href="javascript:void(0);" onclick="openPage('index.html');"><img src="images/logo.png" alt="Logo" class="navbar-logo"></a>
@@ -32,11 +62,11 @@
         </div>
         <div class="navbar-right">
             <div class="language-switcher">
-                <button id="btn-en">
-                    <img src="images/english-flag.png" alt="English" class="flag-icon">
+                <button id="btn-en" data-lang="en">
+                    <img src="images/english-flag.png" class="flag-icon" alt="English">
                 </button>
-                <button id="btn-bs">
-                    <img src="images/bosnian-flag.png" alt="Bosnian" class="flag-icon">
+                <button id="btn-bs" data-lang="bs">
+                    <img src="images/bosnian-flag.png" class="flag-icon" alt="Bosnian">
                 </button>
             </div>
         </div>
@@ -64,19 +94,33 @@
         
     <footer>
         <div class="footer-container">
-            <div class="footer-left">
-                <span><a href="tel:+38766794308">(+387) 66 794 308</a></span>
+            <!-- Desktop Version -->
+            <div class="footer-desktop">
+                <div class="footer-left">
+                    <span><a href="tel:+38766794308">(+387) 66 794 308</a></span>
+                </div>
+                <div class="footer-center">
+                    <a style="color:#f6e277;">2025 SpeedNet Logistics®</a>
+                </div>
+                <div class="footer-right">
+                    <!-- <a>Website made by</a>
+                    <span><a href="mailto:reba@hotmail.com" class="email-link">reba@hotmail.com</a></span> -->                
+                    <span><a href="mailto:speednetlog@gmail.com" class="email-link">speednetlog@gmail.com</a></span>
+                </div>
             </div>
-            <div class="footer-center">
-                <a>2025 SpeedNet Logistics®</a>
-            </div>
-            <div class="footer-right">
-                <!-- <a>Website made by</a>
-                <span><a href="mailto:reba@hotmail.com" class="email-link">reba@hotmail.com</a></span> -->                
-                <span><a href="mailto:speednetlog@gmail.com" class="email-link">speednetlog@gmail.com</a></span>
+
+            <!-- Mobile Version -->
+            <div class="footer-mobile">
+                <div class="footer-bottom">
+                    <a href="tel:+38766794308" class="footer-left">+387&nbsp;66&nbsp;794&nbsp;308</a>
+                    <a href="mailto:speednetlog@gmail.com" class="footer-right email-link">speednetlog@gmail.com</a>
+                </div>
+                <div class="footer-center">
+                    <a style="color:#f6e277; font-size: 14px;">2025 SpeedNet Logistics®</a>
+                </div>
             </div>
         </div>
-    </footer>          
+    </footer>        
     
     <script>
         window.addEventListener("load", function () {

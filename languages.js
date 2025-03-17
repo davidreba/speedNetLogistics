@@ -1,21 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Check if there's a language saved in localStorage
-    let savedLanguage = localStorage.getItem("selectedLanguage");
+    const languageButtons = document.querySelectorAll("#btn-en, #btn-bs");
 
+    // Set initial language from localStorage
+    let savedLanguage = localStorage.getItem("selectedLanguage");
     if (savedLanguage) {
-        changeLanguage(savedLanguage); // Apply saved language
+        changeLanguage(savedLanguage);
     }
 
     // Attach event listeners to flag buttons
-    document.getElementById("btn-en").addEventListener("click", function () {
-        changeLanguage("en");
-    });
-
-    document.getElementById("btn-bs").addEventListener("click", function () {
-        changeLanguage("bs");
+    languageButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            let selectedLanguage = this.getAttribute("data-lang");
+            changeLanguage(selectedLanguage);
+        });
     });
 });
-
 // Function to change language
 function changeLanguage(language) {
     localStorage.setItem("selectedLanguage", language); // Save selected language
@@ -31,6 +30,11 @@ function changeLanguage(language) {
             solutions: "Our solutions",
             career: "Career",        
             contact: "Contact",
+            why_SNL_mob: "Why SNL", 
+            about_mob: "About us",  
+            solutions_mob: "Our solutions",
+            career_mob: "Career",        
+            contact_mob: "Contact",
             start_h1: "Connect your business with the world",
             start_p1: "It doesn't matter if you run a global powerhouse or local startup. We're here to help your business grow.",
             why_SNL_h1: "Why SpeedNet Logistics should be your transport and logistics company of choice",
@@ -76,19 +80,24 @@ function changeLanguage(language) {
             solutions: "Naša rešenja",
             career: "Karijera",        
             contact: "Kontakt",
+            why_SNL_mob: "Zašto SNL",  
+            about_mob: "O nama",  
+            solutions_mob: "Naša rešenja",
+            career_mob: "Karijera",        
+            contact_mob: "Kontakt",
             start_h1: "Povežite svoj biznis sa svetom",
             start_p1: "Nije bitno da li vodite globalnu kompaniju ili lokalni startap. Tu smo da pomognemo vašem biznisu da raste.",
             why_SNL_h1: "Zašto SpeedNet Logistics treba da bude Vaš izbor kompanije za transport i logistiku?",
             why_SNL_p1: "Kao globalni špediter, SpeedNet Logistics svakodnevno pruza i upravlja logistickim rešenjima za hiljade kompanija. Bez obzira da li ste mala porodicna firma ili velika medjunarodna korporacija, naš fokus je na održavanju nesmetanog toka vaših lanaca snabdevanja kroz operativnu izvrsnost i održivi rast.",
             why_SNL_p2: "Naš strucni tim sa industrijskim znanjem, modernim skladištima, jakim partnerskim odnosima sa prevoznicima i globalnom mrežom u 80 zemalja omogucava nam da bolje odgovorimo na vaše potrebe. Pomažemo vam da postignete svoje poslovne ciljeve kroz jedinstvenu kombinaciju optimizovanih i fleksibilnih rešenja, u kombinaciji sa alatima za vidljivost, sigurnom IT infrastrukturom i održivošcu.",
             opti_h1: "Optimizacija",
-            opti_p1: "SpeedNet Logistics pruža optimizirana transportna i logistička rješenja dizajnirana od strane naših stručnjaka za lanac snabdijevanja, osiguravajući pravu ravnotežu između troškova, kompenzacije CO2, nivoa usluge, vremena isporuke i rizika. Naša globalna mreža i snažna partnerstva pružaju vam miks prevoznika prilagođen vašim potrebama. Osiguravamo optimizaciju kroz sve transportne načine koristeći uvide naših lokalnih stručnjaka.",
+            opti_p1: "SpeedNet Logistics pruza optimizirana transportna i logisticka rješenja dizajnirana od strane naših strucnjaka za lanac snabdijevanja, osiguravajuci pravu ravnotežu izmedju troškova, kompenzacije CO2, nivoa usluge, vremena isporuke i rizika. Naša globalna mreža i snažna partnerstva pružaju vam miks prevoznika prilagodjen vašim potrebama. Osiguravamo optimizaciju kroz sve transportne nacine koristeci uvide naših lokalnih strucnjaka.",
             s_v_h1: "Sigurnost i vidljivost",
-            s_v_p1: "Kako bismo smanjili ugljenični otisak vašeg lanca snabdijevanja, SpeedNet Logistics također pruža konsolidaciju, promjenu transportnih načina, optimizaciju utovara, stope popunjenosti kontejnera i globalnu transportnu mrežu. Sa timom industrijskih stručnjaka, spremni smo dizajnirati održiva rješenja koja vam pomažu da postignete zeleniji lanac snabdijevanja.",
+            s_v_p1: "Kako bismo smanjili ugljenicni otisak vašeg lanca snabdijevanja, SpeedNet Logistics takodjer pruža konsolidaciju, promjenu transportnih nacina, optimizaciju utovara, stope popunjenosti kontejnera i globalnu transportnu mrežu. Sa timom industrijskih strucnjaka, spremni smo dizajnirati održiva rješenja koja vam pomažu da postignete zeleniji lanac snabdijevanja.",
             flex_h1: "Fleksibilnost",
-            flex_p1: "SpeedNet Logistics je postao stručnjak za prilagođavanje promjenjivim tržišnim uvjetima i pružanje fleksibilnih rješenja kako bi zadovoljio potrebe vašeg poslovanja. Naš poslovni model je 'light asset'. To znači da možemo brzo skalirati aktivnosti kako bi se uskladili sa promjenama u tržišnoj potražnji. Također, možemo odabrati najbolje dobavljače za bilo koju uslugu, ovisno o faktorima kao što su pouzdanost, dostupni kapacitet, vrijeme tranzita, faktori održivosti i cijena.",
+            flex_p1: "SpeedNet Logistics je postao strucnjak za prilagodjavanje promjenjivim tržišnim uvjetima i pružanje fleksibilnih rješenja kako bi zadovoljio potrebe vašeg poslovanja. Naš poslovni model je 'light asset'. To znaci da možemo brzo skalirati aktivnosti kako bi se uskladili sa promjenama u tržišnoj potražnji. Takodjer, možemo odabrati najbolje dobavljace za bilo koju uslugu, ovisno o faktorima kao što su pouzdanost, dostupni kapacitet, vrijeme tranzita, faktori održivosti i cijena.",
             sust_h1: "Održivost",
-            sust_p1: "Kao lider u transportu i logistici, SpeedNet Logistics ima važnu ulogu u pomaganju industriji da pređe na zelenije, ekološki prihvatljivije prakse. Pružamo održiva i efikasna transportna rješenja kroz bolje planiranje, nove tehnologije i inovativna rješenja. Radimo sa održivošću u svim područjima našeg poslovanja, od avio, pomorskog i cestovnog transporta do ugovorene logistike.",
+            sust_p1: "Kao lider u transportu i logistici, SpeedNet Logistics ima važnu ulogu u pomaganju industriji da predje na zelenije, ekološki prihvatljivije prakse. Pružamo održiva i efikasna transportna rješenja kroz bolje planiranje, nove tehnologije i inovativna rješenja. Radimo sa održivošcu u svim podrucjima našeg poslovanja, od avio, pomorskog i cestovnog transporta do ugovorene logistike.",
             solu_h: "Istražite svoje opcije transporta",
             airfh: "Avio prijevoz",
             airfp: "Kada su vrijeme i brzina najvažniji",
@@ -110,7 +119,7 @@ function changeLanguage(language) {
             cariera_p1: "Tražite novu priliku za zaposlenje? Pridružite se našem timu!",
             cariera_p2: "Za dostupne pozicije kontaktirajte nas na:",
             about_h: "O nama",
-            about_p: "Speednet Logistics d.o.o. je logistička kompanija sa sjedištem u Bijeljini, specijalizovana za cestovni prijevoz robe. Pružamo pouzdane i efikasne transportne usluge širom Bosne i Hercegovine i regije, osiguravajući siguran i pravovremen transport različitih vrsta tereta. Pored cestovnog prevoza, nudimo i različite vrste transportnih rješenja prilagođenih potrebama naših klijenata, uključujući kombinovani i specijalizovani transport. Naš tim iskusnih profesionalaca i moderna transportna flota garantuju visok kvalitet usluge i zadovoljstvo naših klijenata. Kontaktirajte nas za sigurno i brzo rješenje vaših logističkih potreba!"
+            about_p: "Speednet Logistics d.o.o. je logisticka kompanija sa sjedištem u Bijeljini, specijalizovana za cestovni prijevoz robe. Pružamo pouzdane i efikasne transportne usluge širom Bosne i Hercegovine i regije, osiguravajuci siguran i pravovremen transport razlicitih vrsta tereta. Pored cestovnog prevoza, nudimo i razlicite vrste transportnih rješenja prilagodjenih potrebama naših klijenata, ukljucujuci kombinovani i specijalizovani transport. Naš tim iskusnih profesionalaca i moderna transportna flota garantuju visok kvalitet usluge i zadovoljstvo naših klijenata. Kontaktirajte nas za sigurno i brzo rješenje vaših logistickih potreba!"
         }
     };
     
