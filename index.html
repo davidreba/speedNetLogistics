@@ -1,62 +1,46 @@
 <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="description" content="SNL website">
-     <meta name="keywords" content="speednet logistics, speed net logistics, speednetlogistics, speednet, speed net, logistics, transport, europe, bosnia, bijeljina">
-     <meta name="author" content="David Reba">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-     <title>SpeedNet Logistics</title>
-     <link rel="icon" type="image/png" sizes="32x32" href="images/logoW.png">
-     <link rel="stylesheet" href="./styles.css">
-     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Roboto&display=swap" rel="stylesheet">
- 
-     <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
- 
- 	<script>
-         // Create a function that handles the dynamic routing based on the path
-         function loadPage(page) {
-             const pages = {
-                 "/": 'https://speednetlogistics.com/index.html',
- 				"/home": "https://speednetlogistics.com/index.html",
- 				"/why-snl": 'https://speednetlogistics.com/index.html#why',
- 				"/our-solutions": 'https://speednetlogistics.com/index.html#solution',
- 				"/about-us": "https://speednetlogistics.com/about.html",
- 				"/contact": "https://speednetlogistics.com/contact.html",
- 				"/career": "https://speednetlogistics.com/career.html"
-                 '/': 'https://speednetlogistics.com/index.html',
- 				'/home': 'https://speednetlogistics.com/index.html',
- 				'/why-snl': 'https://speednetlogistics.com/index.html#why',
- 				'/our-solutions': 'https://speednetlogistics.com/index.html#solution',
- 				'/about-us': 'https://speednetlogistics.com/about.html',
- 				'/contact': 'https://speednetlogistics.com/contact.html',
- 				'/career': 'https://speednetlogistics.com/career.html'
-             };
- 
-             // Check if the page exists, otherwise load 404 page
-             const pageToLoad = pages[page] || '404.html';
- 
-             // Load the page content into the body
-             fetch(pageToLoad)
-                 .then(response => response.text())
-                 .then(data => {
-                     document.body.innerHTML = data;
-                 })
-                 .catch(err => {
-                     document.body.innerHTML = "<h1>404 Page Not Found</h1>";
-                 });
-         }
- 
-         // Load the page based on the current path
-         window.onload = () => {
-             const path = window.location.pathname;
-             loadPage(path);
-         }
-     </script>
- </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SNL website">
+    <meta name="keywords" content="speednet logistics, speed net logistics, speednetlogistics, speednet, speed net, logistics, transport, europe, bosnia, bijeljina">
+    <meta name="author" content="David Reba">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SpeedNet Logistics</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logoW.png">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Roboto&display=swap" rel="stylesheet">
+	
+    <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script> 
+
+    <script>
+        // Define a map between local file paths and the desired URL paths
+        const hashToUrlMap = {
+            "index.html": "/home",
+            "index.html#solution": "/our-solutions",
+            "index.html#why": "/why-snl"
+        };
+
+        // Function to update the URL in the browser address bar
+        function updateUrl() {
+            const currentHash = window.location.hash; // e.g. #solution
+
+            // If the current hash matches a key in our map
+            if (hashToUrlMap[currentHash]) {
+                const newUrl = "https://speednetlogistics.com" + hashToUrlMap[currentHash];
+
+                // Use pushState to change the URL without reloading the page
+                window.history.pushState(null, null, newUrl);
+            }
+        }
+
+        // When the page loads, call the updateUrl function
+        window.onload = updateUrl;
+    </script>
+</head>
 <body>
     <div id="loader"></div>
 
