@@ -70,7 +70,7 @@ function changeLanguage(language) {
             contact_tel: "Phone: (+387) 66 794 308",
             contact_addr: "Address: Kneza Miloša 8/2, Bijeljina, BiH",
             cariera_h: "Career",
-            cariera_p1: "Looking for a new employment opportunity? Join our team!",
+            cariera_p1: "Looking for a new employment opportunity? Join our team!  For available positions, contact us!",
             cariera_p2: "For available positions, contact us!",
             about_h: "About us",
             about_p: "Speednet Logistics d.o.o. is a logistics company based in Bijeljina, specializing in road freight transport. We provide reliable and efficient transportation services across Bosnia and Herzegovina and the region, ensuring the safe and timely delivery of various types of cargo. In addition to road transport, we offer different transport solutions tailored to our clients' needs, including combined and specialized transport. Our team of experienced professionals and a modern transport fleet guarantee high-quality service and customer satisfaction. Contact us for a safe and fast solution to your logistics needs!"
@@ -124,7 +124,7 @@ function changeLanguage(language) {
             contact_tel: "Telefon: (+387) 66 794 308",
             contact_addr: "Adresa: Kneza Miloša 8/2, Bijeljina, BiH",
             cariera_h: "Zaposlenje",
-            cariera_p1: "Tražite novu priliku za zaposlenje? Pridružite se našem timu!",
+            cariera_p1: "Tražite novu priliku za zaposlenje? Pridružite se našem timu! Za dostupne pozicije kontaktirajte nas!",
             cariera_p2: "Za dostupne pozicije kontaktirajte nas!",
             about_h: "O nama",
             about_p: "Speednet Logistics d.o.o. je logisticka kompanija sa sjedištem u Bijeljini, specijalizovana za cestovni prijevoz robe. Pružamo pouzdane i efikasne transportne usluge širom Bosne i Hercegovine i regije, osiguravajuci siguran i pravovremen transport razlicitih vrsta tereta. Pored cestovnog prevoza, nudimo i razlicite vrste transportnih rješenja prilagodjenih potrebama naših klijenata, ukljucujuci kombinovani i specijalizovani transport. Naš tim iskusnih profesionalaca i moderna transportna flota garantuju visok kvalitet usluge i zadovoljstvo naših klijenata. Kontaktirajte nas za sigurno i brzo rješenje vaših logistickih potreba!"
