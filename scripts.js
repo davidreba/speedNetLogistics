@@ -42,6 +42,34 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Language set to:", savedLanguage);
         document.documentElement.setAttribute("lang", savedLanguage);
     }
+	
+	const form = document.querySelector("form");
+    
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+            showSuccessMessage(); // Show success message
+            form.reset(); // Clear form fields
+        } else {
+            showErrorMessage(); // Show error message if failed
+        }
+    });
+
+    function showSuccessMessage() {
+        alert("✅ Message sent successfully!"); // Replace with a custom popup if needed
+    }
+
+    function showErrorMessage() {
+        alert("❌ Failed to send message. Please try again.");
+    }
 });
 
 // Get the mobile menu and the menu links

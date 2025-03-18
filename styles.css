@@ -366,19 +366,6 @@ img {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.main-content-about {
-    height: 100vh; /* Full viewport height */
-     /*background-image: url('images/aboutus.png'); Replace with actual path 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding-top: 160px; /* Adjust based on navbar height */
-}
-
 .language-switcher {
     display: flex;
     position: absolute;  /* Allow positioning within the navbar */
@@ -426,26 +413,34 @@ img {
 
 .start .container {
     position: absolute;
-    top: 10%; /* 10% from the top */
-    left: 5%; /* 5% from the left */
-    width: 30%; /* 30% from the right */
-    bottom: 60%; /* 50% from the bottom */
-    background-color: rgba(45, 79, 143, 0.7); /* Semi-transparent blue background */
+    top: 10%;
+    left: 5%;
+    width: 30%;
+    max-width: 400px; /* Limits the width */
+    max-height: 40vh; /* Limits the height */
+    background-color: rgba(45, 79, 143, 0.7);
     padding: 20px;
     box-sizing: border-box;
-    z-index: 2; /* Ensures text container is above the background */
+    z-index: 2;
+    overflow: hidden; /* Prevents text overflow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.start .container h1 {
-    margin-bottom: 15px;
-    font-size: 2em;
+.start .container h1,
+.start .container p {
+    word-wrap: break-word; /* Ensures long words break correctly */
+    overflow-wrap: break-word;
+    text-align: left;
+    font-size: clamp(1.5em, 2vw, 2em); /* Makes font size responsive */
+    max-width: 100%; /* Prevents text from overflowing */
     color: white; /* Adjust text color */
 }
 
 .start .container p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #f6e277; /* Adjust text color */
+    font-size: clamp(1em, 1.5vw, 1.2em); /* Makes paragraph text responsive */
+    line-height: 1.4;
 }
 
 .solution {
@@ -511,6 +506,19 @@ img {
     white-space: nowrap; /* Prevents text from wrapping */
 }
 
+.main-content-about {
+    height: 100vh; /* Full viewport height */
+     /*background-image: url('images/aboutus.png'); Replace with actual path 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 160px; /* Adjust based on navbar height */
+}
+
 .aboutus {
     display: flex;
     width: 90%; /* Keeps layout responsive */
@@ -524,28 +532,38 @@ img {
 
 .aboutus .content-box {
     position: absolute;
-    top: 10%; /* 10% from the top */
-    left: 5%; /* 5% from the left */
-    width: 30%; /* 30% from the right */
-    bottom: 30%; /* 30% from the bottom */
-    background-color: rgba(45, 79, 143, 0.7); /* Semi-transparent blue background */
+    top: 10%;
+    left: 5%;
+    width: 35%;
+    height: 60%; /* Fixed height based on your previous bottom: 30% */
+    background-color: rgba(45, 79, 143, 0.7);
     padding: 20px;
     box-sizing: border-box;
-    z-index: 2; /* Ensures text box is above the background */
+    z-index: 2;
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevents content from breaking the box */
 }
 
 .aboutus .content-box h1 {
     margin-bottom: 15px;
     font-size: 2em;
     color: white;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .aboutus .content-box p {
     font-size: 1.2em;
-    line-height: 1.6;
-    color: #f6e277; /* Matching the index.html style */
+    line-height: 1.4;
+    color: #f6e277;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    overflow-y: auto; /* Scrolls if text is too long */
+    flex-grow: 1; /* Ensures the paragraph takes up available space */
 }
 
 /* Image Box for Truck */
@@ -587,7 +605,7 @@ img {
     position: absolute;
     top: 10%; /* 10% from the top */
     left: 5%; /* 5% from the left */
-    width: 30%; /* 30% width */
+    width: 35%;
     bottom: 30%; /* Adjust bottom spacing */
     background-color: rgba(45, 79, 143, 0.7); /* Semi-transparent blue background */
     padding: 20px;
@@ -624,13 +642,14 @@ img {
     width: 90%; /* Keeps layout responsive */
     max-width: 1200px;
     justify-content: center; /* Center the content */
+    flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
 }
 
 .contact .content-box {
     position: absolute;
     top: 10%; /* 10% from the top */
     left: 5%; /* 5% from the left */
-    width: 30%; /* 30% width */
+    width: 35%;
     bottom: 30%; /* Adjust bottom spacing */
     background-color: rgba(45, 79, 143, 0.7); /* Semi-transparent blue background */
     padding: 20px;
@@ -658,6 +677,50 @@ img {
     font-size: 1.2em;
     line-height: 1.6;
     color: #f6e277; /* Matching the index.html style */
+}
+
+.contact-form {
+    margin-top: 20px;
+	margin-right: 10px;
+	margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    font-size: 1em;
+}
+
+.contact-form input {
+    height: 20px;
+    resize: none;
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contact-form button {
+    background-color: #f6e277;
+	width: 50%; /* Adjust width if needed */
+    text-align: center;
+    color: white;
+	width: 120px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.contact-form button:hover {
+    background-color: #e5d166;
 }
 
 /* Image Box for Contact Page */
@@ -759,7 +822,7 @@ footer {
 }
 
 .footer-desktop .footer-right {
-	margin-right: 40px;
+	margin-right: 80px;
 }
 
 
@@ -772,6 +835,17 @@ footer .footer-left a:hover {
     transform: scale(1.1); /* Slightly increase the size on hover */
     opacity: 0.9; /* Make the image slightly transparent */
 }
+
+footer .footer-right a {
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    cursor: pointer;
+}
+
+footer .footer-right a:hover {
+    transform: scale(1.1); /* Slightly increase the size on hover */
+    opacity: 0.9; /* Make the image slightly transparent */
+}
+
 
 .footer-mobile {
     display: none;
