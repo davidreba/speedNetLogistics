@@ -516,7 +516,7 @@ img {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-top: 160px; /* Adjust based on navbar height */
+    padding-top: 240px; /* Adjust based on navbar height */
 }
 
 .aboutus {
@@ -537,7 +537,7 @@ img {
     width: 35%;
     height: 60%; /* Fixed height based on your previous bottom: 30% */
     background-color: rgba(45, 79, 143, 0.7);
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
     z-index: 2;
     color: white;
@@ -591,7 +591,7 @@ img {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-top: 160px; /* Adjust based on navbar height */
+    padding-top: 240px; /* Adjust based on navbar height */
 }
 
 .careers {
@@ -608,7 +608,7 @@ img {
     width: 35%;
     bottom: 30%; /* Adjust bottom spacing */
     background-color: rgba(45, 79, 143, 0.7); /* Semi-transparent blue background */
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
     z-index: 2; /* Ensures text box is above the background */
     color: white;
@@ -634,7 +634,7 @@ img {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-top: 160px; /* Adjust based on navbar height */
+    padding-top: 240px; /* Adjust based on navbar height */
 }
 
 .contact {
@@ -652,7 +652,7 @@ img {
     width: 35%;
     bottom: 30%; /* Adjust bottom spacing */
     background-color: rgba(45, 79, 143, 0.7); /* Semi-transparent blue background */
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
     z-index: 2; /* Ensures text box is above the background */
     color: white;
@@ -668,7 +668,6 @@ img {
 }
 
 .contact .content-box h1 {
-    margin-bottom: 15px;
     font-size: 2em;
     color: white;
 }
@@ -680,7 +679,6 @@ img {
 }
 
 .contact-form {
-    margin-top: 20px;
 	margin-right: 10px;
 	margin-left: 10px;
     display: flex;
@@ -790,12 +788,12 @@ img {
 footer {
     min-height: 40px;
     width: 100%;
-    font-family: 'Arial Nova Light', sans-serif;
 	font-weight: 400;
     background-color: #272727; /* Same as topbar background */
     color: white;
     background-color: #2d4f8f;
     padding: 10px 0; /* Adds spacing inside the footer */
+    font-size: 18px;
     /*padding: 20px 0;
     text-align: center;
     position: relative;
@@ -819,12 +817,18 @@ footer {
 
 .footer-desktop .footer-left {
 	margin-left: 80px;
+    font-family: 'FoundrySterling-Light', Arial, sans-serif;
 }
 
 .footer-desktop .footer-right {
 	margin-right: 80px;
 }
 
+.footer-desktop #contact_addr {
+	font-family: 'FoundrySterling-Light', Arial, sans-serif;
+    margin-bottom: 0px; /* Adds some space between the links */
+    font-size: 18px;
+}
 
 footer .footer-left a {
     transition: transform 0.3s ease; /* Smooth transition for hover effect */
