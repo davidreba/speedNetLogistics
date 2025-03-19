@@ -4,29 +4,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuLinks = document.querySelectorAll(".mobile-menu ul li a");
     const languageButtons = document.querySelectorAll(".language-switcher_mob button");
 
-    // Toggle mobile menu
-    mobileMenuButton.addEventListener("click", function () {
-        mobileMenu.classList.toggle("active");
-    });
+    if (mobileMenuButton && mobileMenu) {
+        // Toggle mobile menu
+        mobileMenuButton.addEventListener("click", function () {
+            mobileMenu.classList.toggle("active");
+        });
+    }
 
     // Close mobile menu when clicking on a link
     menuLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            mobileMenu.classList.remove("active");
-        });
+        if (link) {
+            link.addEventListener("click", function () {
+                mobileMenu.classList.remove("active");
+            });
+        }
     });
 
-    // Language switcher functionality (Prevent reload on mobile)
+    // Language switcher functionality
     languageButtons.forEach(button => {
         button.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default behavior
+            event.preventDefault();
             const selectedLanguage = this.getAttribute("data-lang");
 
-            // Save the language selection in localStorage
             localStorage.setItem("selectedLanguage", selectedLanguage);
-
-            // Reload only if NOT in mobile view
-            if (window.innerWidth > 768) { 
+            if (window.innerWidth > 768) {
                 location.reload();
             } else {
                 console.log("Language switched to:", selectedLanguage);
@@ -44,32 +45,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 	
 	const form = document.querySelector("form");
-    
-    form.addEventListener("submit", async function (event) {
-        event.preventDefault(); // Prevent default form submission
 
-        const formData = new FormData(form);
-        const response = await fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: { "Accept": "application/json" }
-        });
+	if (form) {
+		form.addEventListener("submit", async function (event) {
+			event.preventDefault(); // Prevent default form submission
 
-        if (response.ok) {
-            showSuccessMessage(); // Show success message
-            form.reset(); // Clear form fields
-        } else {
-            showErrorMessage(); // Show error message if failed
-        }
-    });
+			const formData = new FormData(form);
+			const response = await fetch(form.action, {
+				method: "POST",
+				body: formData,
+				headers: { "Accept": "application/json" }
+			});
 
-    function showSuccessMessage() {
-        alert("✅ Message sent successfully!"); // Replace with a custom popup if needed
-    }
+			if (response.ok) {
+				showSuccessMessage(); // Show success message
+				form.reset(); // Clear form fields
+			} else {
+				showErrorMessage(); // Show error message if failed
+			}
+		});
+	}
 
-    function showErrorMessage() {
-        alert("❌ Failed to send message. Please try again.");
-    }
+	function showSuccessMessage() {
+		alert("✅ Message sent successfully!"); // Replace with a custom popup if needed
+	}
+
+	function showErrorMessage() {
+		alert("❌ Failed to send message. Please try again.");
+	}
 });
 
 // Get the mobile menu and the menu links
