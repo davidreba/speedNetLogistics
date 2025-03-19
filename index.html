@@ -225,10 +225,25 @@
     </footer>
 
 	<script>
-	  document.addEventListener("DOMContentLoaded", function () {
+		document.addEventListener("DOMContentLoaded", function () {
+		// Redirect /home to index.html to prevent 404 on GitHub Pages
+		if (window.location.pathname === "/home") {
+		  window.location.replace("/index.html" + window.location.hash);
+		  return; // Stop further execution to avoid conflicts
+		}
+
+		// Replace /index.html or / with /home while preserving hash
 		if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
-		  let newPath = "/home" + window.location.hash; // Preserve hash
+		  let newPath = "/home" + window.location.hash;
 		  history.replaceState(null, "", newPath);
+		}
+
+		// Smooth scrolling to section if there's a hash
+		if (window.location.hash) {
+		  let target = document.querySelector(window.location.hash);
+		  if (target) {
+			setTimeout(() => target.scrollIntoView({ behavior: "smooth" }), 100);
+		  }
 		}
 	  });
 	</script>
