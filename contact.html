@@ -131,7 +131,12 @@
             </div>
         </div>
     </footer>        
-    
+
+	<script>
+        if (window.location.pathname === "/contact.html") {
+			history.replaceState(null, "", "/contact");
+		}
+	</script>
     <script>
         window.addEventListener("load", function () {
         const loader = document.getElementById("loader");

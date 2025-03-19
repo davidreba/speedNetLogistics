@@ -125,7 +125,12 @@
             </div>
         </div>
     </footer>      
-    
+
+	<script>
+        if (window.location.pathname === "/about.html") {
+			history.replaceState(null, "", "/about-us");
+		}
+	</script>
     <script>
         window.addEventListener("load", function () {
         const loader = document.getElementById("loader");

@@ -128,7 +128,12 @@
             </div>
         </div>
     </footer>       
-    
+
+	<script>
+        if (window.location.pathname === "/career.html") {
+			history.replaceState(null, "", "/career");
+		}
+	</script>
     <script>
         window.addEventListener("load", function () {
         const loader = document.getElementById("loader");
