@@ -225,11 +225,16 @@
     </footer>
 
     <script>
+        if (window.location.pathname === "/index.html") {
+			history.replaceState(null, "", "/home");
+		}
+    </script>
+	<script>
         window.addEventListener("load", function () {
         const loader = document.getElementById("loader");
         loader.classList.add("hidden");
         });
-    </script> 
+    </script>
     <script src="./scripts.js"></script>
     <script src="./languages.js"></script>
 </body> 
