@@ -1,26 +1,27 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpeedNet Logistics</title>
-    <script>
-      // Redirect based on the URL path
-      const path = window.location.pathname;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpeedNet Logistics</title>
+  <link rel="icon" type="image/png" href="images/logo2.png">
+  <script>
+    // Redirect based on the URL path
+    const path = window.location.pathname;
 
-      if (path === "/home") {
-        window.location.replace("/index.html");  // Redirect to the homepage
-      } else if (path === "/about-us") {
-        window.location.replace("/about.html"); // Redirect to the about page
-      } else if (path === "/contact-us") {
-        window.location.replace("/contact.html"); // Redirect to the contact page
-      } else if (path === "/career") {
-        window.location.replace("/career.html"); // Redirect to the career page
-      } else {
-        window.location.replace("/index.html");  // Default redirection to homepage
-      }
-    </script>
-  </head>
-  <body>
-    <p>Redirecting...</p>
-  </body>
+    if (path === "/home" || path === "/") {
+      window.location.replace("/index.html");  // Redirect to the homepage
+    } else if (path === "/about-us") {
+      window.location.replace("/about.html"); // Redirect to the about page
+    } else if (path === "/contact-us") {
+      window.location.replace("/contact.html"); // Redirect to the contact page
+    } else if (path === "/career") {
+      window.location.replace("/career.html"); // Redirect to the career page
+    } else {
+      window.location.replace("/index.html");  // Default redirection to homepage
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
 </html>
