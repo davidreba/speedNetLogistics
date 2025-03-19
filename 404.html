@@ -1,33 +1,26 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
+    <title>Redirecting...</title>
     <script>
-        // Redirect based on the URL path
-        const redirectMap = {
-            "/": 'https://speednetlogistics.com/index.html',
-            "/home": "https://speednetlogistics.com/index.html",
-            "/why-snl": 'https://speednetlogistics.com/index.html#why',
-            "/our-solutions": 'https://speednetlogistics.com/index.html#solution',
-            "/about-us": "https://speednetlogistics.com/about.html",
-            "/contact": "https://speednetlogistics.com/contact.html",
-            "/career": "https://speednetlogistics.com/career.html"
-        };
+      // Redirect based on the URL path
+      const path = window.location.pathname;
 
-        // Get the current path
-        const path = window.location.pathname;
-
-        // Redirect to the mapped page or the 404 page
-        if (pageMapping[path]) {
-            window.location.href = pageMapping[path];
-        } else {
-            document.body.innerHTML = '<h1>404 Page Not Found</h1>';
-        }
+      if (path === "/home") {
+        window.location.replace("/index.html");  // Redirect to the homepage
+      } else if (path === "/about-us") {
+        window.location.replace("/about.html"); // Redirect to the about page
+      } else if (path === "/contact-us") {
+        window.location.replace("/contact.html"); // Redirect to the contact page
+      } else if (path === "/career") {
+        window.location.replace("/career.html"); // Redirect to the career page
+      } else {
+        window.location.replace("/index.html");  // Default redirection to homepage
+      }
     </script>
-</head>
-<body>
-    <p>If you are seeing this page, the URL is not correct. Redirecting...</p>
-</body>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
 </html>
