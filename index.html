@@ -225,9 +225,12 @@
     </footer>
 
 	<script>
-        if (window.location.pathname === "/index.html" || window.location.pathname === "/index.html#why" || window.location.pathname === "/index.html#solution") {
-			history.replaceState(null, "", "/home");
+	  document.addEventListener("DOMContentLoaded", function () {
+		if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
+		  let newPath = "/home" + window.location.hash; // Preserve hash
+		  history.replaceState(null, "", newPath);
 		}
+	  });
 	</script>
 	<script>
         window.addEventListener("load", function () {
