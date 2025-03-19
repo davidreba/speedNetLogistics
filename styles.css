@@ -77,10 +77,6 @@ html {
     overflow-y: scroll; /* Ensures scrollbar is always present */
 }
 
-.main-content {
-    flex: 1; /* Pushes the footer to the bottom */
-}
-
 h2 {
     font-family: 'FoundrySterling-Bold', Arial, sans-serif;
     font-size: 60px;
@@ -390,8 +386,8 @@ img {
     opacity: 0.8;  /* Optional: adds a hover effect */
 }
 
-#why {
-    padding-top: 90px;  /* Adjust this value based on your navbar height */
+.main-content {
+    flex: 1; /* Pushes the footer to the bottom */
 }
 
 #start {
@@ -441,6 +437,10 @@ img {
 .start .container p {
     font-size: clamp(1em, 1.5vw, 1.2em); /* Makes paragraph text responsive */
     line-height: 1.4;
+}
+
+#why {
+    padding-top: 90px;  /* Adjust this value based on your navbar height */
 }
 
 .solution {
@@ -881,27 +881,28 @@ footer .email-link:hover {
 
 @media (max-width: 768px) {
     .start .container {
-        position: static; /* Remove absolute positioning */
-        width: 90%; /* Make it wider on small screens */
-        max-width: 90%; /* Ensure it doesn’t exceed screen width */
-        margin: 0 auto; /* Center the container */
-        padding: 15px; /* Adjust padding for better spacing */
-        text-align: center; /* Ensure text remains centered */
-        margin-top: -320px; /* Move it up slightly */
+        position: static;
+        width: 90%;
+        max-width: 90%;
+        height: auto; /* Allows the height to adjust dynamically */
+        padding: 15px;
+        text-align: center;
+        margin-top: 0; /* Prevents large shifts */
+        max-height: none; /* Removes height restriction */
     }
 
     .start .container h1 {
-        font-size: 2em;
+        font-size: clamp(2em, 3.25vw, 2.66em); /* Adjust text for mobile */
     }
 
     .start .container p {
-        font-size: 1.5em;
+        font-size: clamp(1.33em, 2.66vw, 1.73em);
     }
 
     #start {
-        padding-top: 120px; /* Adjust padding if needed */
-        height: auto; /* Allow height to adjust dynamically */
-        min-height: 100vh; /* Ensure it covers full viewport height */
+        padding-top: 120px;
+        height: auto;
+        min-height: 100vh;
     }
 	
 	.main-content-about,
