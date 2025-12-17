@@ -392,11 +392,8 @@ img {
 
 #start {
     height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    animation: slideshow 15s infinite;
+    position: relative;
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
@@ -406,23 +403,57 @@ img {
 
     color: white;
     padding: 20px;
-    position: relative;
     padding-top: 160px;
 }
 
-@keyframes slideshow {
-    0% {
-        background-image: url('images/slide1.jpg');
-    }
-    33% {
-        background-image: url('images/slide2.jpg');
-    }
-    66% {
-        background-image: url('images/slide3.jpg');
-    }
-    100% {
-        background-image: url('images/slide1.jpg');
-    }
+/* zajednički stil za sve slideove */
+#start::before,
+#start::after,
+#start .slide {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: fade 25s infinite;
+}
+
+/* pojedinačne slike */
+#start::before {
+    background-image: url("images/slide1.jpg");
+    animation-delay: 0s;
+}
+
+#start::after {
+    background-image: url("images/slide2.jpg");
+    animation-delay: 5s;
+}
+
+/* dodatni slojevi */
+#start .slide:nth-child(1) {
+    background-image: url("images/slide3.jpg");
+    animation-delay: 10s;
+}
+
+#start .slide:nth-child(2) {
+    background-image: url("images/slide4.jpg");
+    animation-delay: 15s;
+}
+
+#start .slide:nth-child(3) {
+    background-image: url("images/slide5.jpg");
+    animation-delay: 20s;
+}
+
+/* animacija */
+@keyframes fade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    20% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
 }
 
 .start .container {
