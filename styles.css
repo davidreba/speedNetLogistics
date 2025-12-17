@@ -391,20 +391,38 @@ img {
 }
 
 #start {
-    height: 100vh; /* Full viewport height */
-    background-image: url('images/log2.png'); /* Replace with actual path */
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    animation: slideshow 15s infinite;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white; /* Adjust text color */
+
+    color: white;
     padding: 20px;
     position: relative;
-    padding-top: 160px;  /* Adjust this value based on your navbar height */
+    padding-top: 160px;
+}
+
+@keyframes slideshow {
+    0% {
+        background-image: url('images/slide1.jpg');
+    }
+    33% {
+        background-image: url('images/slide2.jpg');
+    }
+    66% {
+        background-image: url('images/slide3.jpg');
+    }
+    100% {
+        background-image: url('images/slide1.jpg');
+    }
 }
 
 .start .container {
